@@ -1,4 +1,5 @@
 import be.encelade.ouistiti.CameraManager;
+import be.encelade.ouistiti.DefaultCameraSpeedCalculator;
 import be.encelade.ouistiti.ViewMode;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
@@ -22,11 +23,8 @@ public class TestCameraManagerJava {
 
         @Override
         public void simpleInitApp() {
-            cameraManager = new CameraManager(this, ViewMode.ISO_VIEW);
-            cameraManager.loadDefaultKeyMappings();
-
-            inputManager.setCursorVisible(true);
-            flyCam.setEnabled(false);
+            cameraManager = new CameraManager(this, ViewMode.ISO_VIEW, new DefaultCameraSpeedCalculator());
+            cameraManager.addDefaultKeyMappings();
 
             addFloor();
             viewPort.setBackgroundColor(new ColorRGBA(28 / 255f, 48 / 255f, 100 / 255f, 1f));

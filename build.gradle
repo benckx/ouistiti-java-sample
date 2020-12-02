@@ -1,3 +1,7 @@
+plugins {
+    id "com.github.ben-manes.versions" version "0.36.0"
+}
+
 repositories {
     mavenCentral()
     jcenter()
@@ -11,12 +15,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 def jmeVersion = "3.3.2-stable"
+def ouistitiVersion = "1.2"
 
 dependencies {
-    // lib
-    compile "com.github.benckx:ouistiti:1.1"
+    // jme3 helper libs
+    compile "com.github.benckx:ouistiti:$ouistitiVersion"
 
-    // jMonkey Engine
+    // jme3 libs
     compile "org.jmonkeyengine:jme3-core:$jmeVersion"
     compile "org.jmonkeyengine:jme3-desktop:$jmeVersion"
     compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"

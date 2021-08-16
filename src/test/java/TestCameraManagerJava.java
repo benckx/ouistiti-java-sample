@@ -1,21 +1,32 @@
 import be.encelade.ouistiti.CameraManager;
 import be.encelade.ouistiti.DefaultCameraSpeedCalculator;
-import be.encelade.ouistiti.ViewMode;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Box;
+import com.jme3.system.AppSettings;
 
+import static be.encelade.ouistiti.ViewMode.ISOMETRIC_VIEW;
 import static com.jme3.material.Materials.UNSHADED;
 
 public class TestCameraManagerJava {
 
     public static void main(String[] args) {
-        new MyJavaApp().start();
+        AppSettings settings = new AppSettings(true);
+        settings.setTitle("ouistiti Java Demo");
+        settings.setFullscreen(false);
+        settings.setVSync(false);
+        settings.setSamples(16);
+        settings.setResolution(1280, 720);
+
+        DemoApp app = new DemoApp();
+        app.setSettings(settings);
+        app.setShowSettings(false);
+        app.start();
     }
 
-    public static class MyJavaApp extends SimpleApplication {
+    public static class DemoApp extends SimpleApplication {
 
         int sizeX = 10;
         int sizeY = 8;
@@ -23,7 +34,7 @@ public class TestCameraManagerJava {
 
         @Override
         public void simpleInitApp() {
-            cameraManager = new CameraManager(this, ViewMode.ISO_VIEW, new DefaultCameraSpeedCalculator());
+            cameraManager = new CameraManager(this, ISOMETRIC_VIEW, new DefaultCameraSpeedCalculator());
             cameraManager.addDefaultKeyMappings();
 
             addFloor();

@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.ben-manes.versions" version "0.36.0"
+    id "com.github.ben-manes.versions" version "0.39.0"
 }
 
 repositories {
@@ -14,8 +14,8 @@ apply plugin: 'maven'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-def jmeVersion = "3.3.2-stable"
-def ouistitiVersion = "1.2"
+def jmeVersion = "3.4.0-stable"
+def ouistitiVersion = "2.0"
 
 dependencies {
     // jme3 helper libs
@@ -24,5 +24,5 @@ dependencies {
     // jme3 libs
     compile "org.jmonkeyengine:jme3-core:$jmeVersion"
     compile "org.jmonkeyengine:jme3-desktop:$jmeVersion"
-    compile "org.jmonkeyengine:jme3-lwjgl:$jmeVersion"
+    compile "org.jmonkeyengine:jme3-lwjgl3:$jmeVersion"
 }

@@ -1,11 +1,10 @@
 plugins {
-    id "com.github.ben-manes.versions" version "0.39.0"
+    id "com.github.ben-manes.versions" version "0.42.0"
 }
 
 repositories {
-    mavenCentral()
-    jcenter()
     maven { url "https://jitpack.io" }
+    mavenCentral()
 }
 
 apply plugin: 'java'
@@ -14,12 +13,17 @@ apply plugin: 'maven'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-def jmeVersion = "3.4.0-stable"
-def ouistitiVersion = "2.0"
+def jmeVersion = "3.5.2-stable"
+def ouistitiVersion = "2.1.1"
+def chimpUtilsVersion = "1.7.0"
 
 dependencies {
-    // jme3 helper libs
+    // ouistiti dependencies
+    compile "com.github.benckx.chimp-utils:chimp-utils-jme3:$chimpUtilsVersion"
     compile "com.github.benckx:ouistiti:$ouistitiVersion"
+
+    // ouistiti camera manager
+    compile "com.github.benckx.chimp-utils:chimp-utils-basics:$chimpUtilsVersion"
 
     // jme3 libs
     compile "org.jmonkeyengine:jme3-core:$jmeVersion"

@@ -20,10 +20,10 @@ def chimpUtilsVersion = "1.7.0"
 dependencies {
     // ouistiti dependencies
     compile "com.github.benckx.chimp-utils:chimp-utils-jme3:$chimpUtilsVersion"
-    compile "com.github.benckx:ouistiti:$ouistitiVersion"
+    compile "com.github.benckx.chimp-utils:chimp-utils-basics:$chimpUtilsVersion"
 
     // ouistiti camera manager
-    compile "com.github.benckx.chimp-utils:chimp-utils-basics:$chimpUtilsVersion"
+    compile "com.github.benckx:ouistiti:$ouistitiVersion"
 
     // jme3 libs
     compile "org.jmonkeyengine:jme3-core:$jmeVersion"

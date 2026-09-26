@@ -1,0 +1,16 @@
+[versions]
+benManesVersions = "0.64.0"
+jme = "3.9.0-stable"
+chimpUtils = "1.7.0"
+ouistiti = "2.2.1"
+
+[libraries]
+jme-core = { module = "org.jmonkeyengine:jme3-core", version.ref = "jme" }
+jme-desktop = { module = "org.jmonkeyengine:jme3-desktop", version.ref = "jme" }
+jme-lwjgl3 = { module = "org.jmonkeyengine:jme3-lwjgl3", version.ref = "jme" }
+ouistiti = { module = "com.github.benckx:ouistiti", version.ref = "ouistiti" }
+chimp-utils-basics = { module = "com.github.benckx.chimp-utils:chimp-utils-basics", version.ref = "chimpUtils" }
+chimp-utils-jme3 = { module = "com.github.benckx.chimp-utils:chimp-utils-jme3", version.ref = "chimpUtils" }
+
+[plugins]
+versions = { id = "com.github.ben-manes.versions", version.ref = "benManesVersions" }

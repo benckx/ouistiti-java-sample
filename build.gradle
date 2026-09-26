@@ -15,7 +15,7 @@ java {
 }
 
 def jmeVersion = "3.9.0-stable"
-def ouistitiVersion = "2.2.0"
+def ouistitiVersion = "2.2.1"
 def chimpUtilsVersion = "1.7.0"
 
 dependencies {
@@ -30,4 +30,8 @@ dependencies {
     implementation "org.jmonkeyengine:jme3-core:$jmeVersion"
     implementation "org.jmonkeyengine:jme3-desktop:$jmeVersion"
     implementation "org.jmonkeyengine:jme3-lwjgl3:$jmeVersion"
+}
+
+test {
+    failOnNoDiscoveredTests = false
 }

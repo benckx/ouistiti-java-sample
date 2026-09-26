@@ -1,32 +1,33 @@
 plugins {
-    id "com.github.ben-manes.versions" version "0.42.0"
+    id "java"
+    id "com.github.ben-manes.versions" version "0.64.0"
 }
 
 repositories {
     maven { url "https://jitpack.io" }
     mavenCentral()
+    google()
 }
 
-apply plugin: 'java'
-apply plugin: 'maven'
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-def jmeVersion = "3.5.2-stable"
-def ouistitiVersion = "2.1.1"
+def jmeVersion = "3.9.0-stable"
+def ouistitiVersion = "2.2.0"
 def chimpUtilsVersion = "1.7.0"
 
 dependencies {
     // ouistiti dependencies
-    compile "com.github.benckx.chimp-utils:chimp-utils-jme3:$chimpUtilsVersion"
-    compile "com.github.benckx.chimp-utils:chimp-utils-basics:$chimpUtilsVersion"
+    implementation "com.github.benckx.chimp-utils:chimp-utils-jme3:$chimpUtilsVersion"
+    implementation "com.github.benckx.chimp-utils:chimp-utils-basics:$chimpUtilsVersion"
 
     // ouistiti camera manager
-    compile "com.github.benckx:ouistiti:$ouistitiVersion"
+    implementation "com.github.benckx:ouistiti:$ouistitiVersion"
 
     // jme3 libs
-    compile "org.jmonkeyengine:jme3-core:$jmeVersion"
-    compile "org.jmonkeyengine:jme3-desktop:$jmeVersion"
-    compile "org.jmonkeyengine:jme3-lwjgl3:$jmeVersion"
+    implementation "org.jmonkeyengine:jme3-core:$jmeVersion"
+    implementation "org.jmonkeyengine:jme3-desktop:$jmeVersion"
+    implementation "org.jmonkeyengine:jme3-lwjgl3:$jmeVersion"
 }

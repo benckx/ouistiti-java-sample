@@ -1,8 +1,8 @@
 [versions]
 benManesVersions = "0.64.0"
 jme = "3.9.0-stable"
-chimpUtils = "1.7.0"
-ouistiti = "2.2.1"
+chimpUtils = "1.8.0"
+ouistiti = "2.2.2"
 
 [libraries]
 jme-core = { module = "org.jmonkeyengine:jme3-core", version.ref = "jme" }
